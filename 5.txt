@@ -1,0 +1,21 @@
+#include <stdio.h>
+void power(int a, int n, long long *result) {
+    if (n == 0) {
+        return;
+    }
+    *result *= a;
+    power(a, n - 1, result);
+}
+int main() {
+    int a, n;
+    long long result = 1;
+    printf("a va n ni kiriting: ");
+    scanf("%d %d", &a, &n);
+    if (n < 0) {
+        printf("Musbat butun daraja (n >= 0) kiriting.\n");
+    } else {
+        power(a, n, &result);
+        printf("%d^%d = %lld\n", a, n, result);
+    }
+    return 0;
+}

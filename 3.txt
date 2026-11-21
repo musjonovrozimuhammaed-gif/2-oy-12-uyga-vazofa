@@ -1,0 +1,16 @@
+#include <stdio.h>
+void sum1ToN(int n, int *sum) {
+    if (n <= 0) {
+        return;
+    }
+    *sum += n;
+    sum1ToN(n - 1, sum);
+}
+int main() {
+    int n, sum = 0;
+    printf("N ni kiriting: ");
+    scanf("%d", &n);
+    sum1ToN(n, &sum);
+    printf("Yig'indi: %d\n", sum);
+    return 0;
+}

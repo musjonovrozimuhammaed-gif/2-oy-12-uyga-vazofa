@@ -1,0 +1,20 @@
+#include <stdio.h>
+void countDigits(int num, int *count) {
+    if (num == 0) {
+        return;
+    }
+    (*count)++;
+    countDigits(num / 10, count);
+}
+int main() {
+    int num, count = 0;
+    printf("Natural son kiriting: ");
+    scanf("%d", &num);
+    if (num == 0) {
+        count = 1;
+    } else {
+        countDigits(num, &count);
+    }
+    printf("Raqamlar soni: %d\n", count);
+    return 0;
+}

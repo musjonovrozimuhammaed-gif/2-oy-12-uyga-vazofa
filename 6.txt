@@ -1,0 +1,16 @@
+#include <stdio.h>
+void sumOfDigits(int num, int *sum) {
+    if (num == 0) {
+        return;
+    }
+    *sum += num % 10;
+    sumOfDigits(num / 10, sum);
+}
+int main() {
+    int num, sum = 0;
+    printf("Natural son kiriting: ");
+    scanf("%d", &num);
+    sumOfDigits(num, &sum);
+    printf("Raqamlar yig'indisi: %d\n", sum);
+    return 0;
+}
